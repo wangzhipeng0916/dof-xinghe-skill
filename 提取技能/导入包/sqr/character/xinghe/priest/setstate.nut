@@ -139,13 +139,13 @@ function handleSkill238State(passiveObject, state, stateVector)
                     {
                         local activeObj = sq_GetCNRDObjectToActiveObject(collisionObj); 
                         if(!activeObj.isDead()
-                            && !CNSquirrelAppendage.sq_IsAppendAppendage(collisionObj, "character/xinghe/priest/qumo/pentagon/ap_pentagon.nut")) 
+                            && !CNSquirrelAppendage.sq_IsAppendAppendage(collisionObj, "character/xinghe/priest/pentagon/ap_pentagon.nut")) 
                         {
                             if(sq_Abs(activeObj.getXPos() - xPos) <= range
                                 && sq_Abs(activeObj.getYPos() - yPos) <= verticalRange
                                 && sq_Abs(activeObj.getZPos() - zPos) <= heightRange)
                             {
-                                CNSquirrelAppendage.sq_AppendAppendage(collisionObj, passiveObject, 238, true, "character/xinghe/priest/qumo/pentagon/ap_pentagon.nut", true);
+                                CNSquirrelAppendage.sq_AppendAppendage(collisionObj, passiveObject, 238, true, "character/xinghe/priest/pentagon/ap_pentagon.nut", true);
                                 passiveObject.getVar().push_obj_vector(collisionObj); 
                             }
                         }

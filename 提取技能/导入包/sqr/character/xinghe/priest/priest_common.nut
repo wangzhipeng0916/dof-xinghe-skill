@@ -28,8 +28,8 @@ function setEnableCancelSkill_Priest(playerObj, enable)
     playerObj.setSkillCommandEnable(240, enable); 
     
     // 根據當前附加組件狀態設置特定技能啟用狀態
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut") 
-        || CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut")) 
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut") 
+        || CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut")) 
         playerObj.setSkillCommandEnable(241, enable); 
         
     // 如果沒有攜帶武器，設置無武器技能啟用狀態
@@ -55,7 +55,7 @@ function setEnableCancelSkill_Priest(playerObj, enable)
     playerObj.setSkillCommandEnable(138, enable); 
     
     // 如果沒有變身組件，設置變身技能啟用狀態
-    if (!CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/metamorphosis/ap_metamorphosis.nut")) 
+    if (!CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/metamorphosis/ap_metamorphosis.nut")) 
         playerObj.setSkillCommandEnable(139, enable); 
         
     return true;
@@ -93,16 +93,16 @@ function onChangeSkillEffect_xinghe_Priest(playerObj, skillId, dataStream)
             {
                 case 1: 
                     // 移除平靜脈輪組件（如果存在）
-                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut")) 
-                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut"); 
+                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut")) 
+                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut"); 
                     // 移除激情脈輪組件（如果存在）
-                    else if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut")) 
-                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut"); 
+                    else if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut")) 
+                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut"); 
                         
                     // 獲取技能等級數據
                     local skillDuration = playerObj.sq_GetLevelData(skillId, 0, sq_GetSkillLevel(playerObj, skillId)); 
                     // 添加激情脈輪附加組件
-                    local passionAppendage = CNSquirrelAppendage.sq_AppendAppendage(playerObj, playerObj, skillId, true, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut", false); 
+                    local passionAppendage = CNSquirrelAppendage.sq_AppendAppendage(playerObj, playerObj, skillId, true, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut", false); 
                     passionAppendage.sq_SetValidTime(skillDuration); 
                     CNSquirrelAppendage.sq_Append(passionAppendage, playerObj, playerObj, false);
                     break;
@@ -115,16 +115,16 @@ function onChangeSkillEffect_xinghe_Priest(playerObj, skillId, dataStream)
             {
                 case 1: 
                     // 移除激情脈輪組件（如果存在）
-                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut")) 
-                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut"); 
+                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut")) 
+                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut"); 
                     // 移除平靜脈輪組件（如果存在）
-                    else if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut")) 
-                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut"); 
+                    else if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut")) 
+                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut"); 
                         
                     // 獲取技能等級數據
                     local skillDuration = playerObj.sq_GetLevelData(skillId, 0, sq_GetSkillLevel(playerObj, skillId)); 
                     // 添加平靜脈輪附加組件
-                    local calmAppendage = CNSquirrelAppendage.sq_AppendAppendage(playerObj, playerObj, skillId, true, "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut", false); 
+                    local calmAppendage = CNSquirrelAppendage.sq_AppendAppendage(playerObj, playerObj, skillId, true, "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut", false); 
                     calmAppendage.sq_SetValidTime(skillDuration); 
                     CNSquirrelAppendage.sq_Append(calmAppendage, playerObj, playerObj, false);
                     break;
@@ -141,8 +141,8 @@ function onChangeSkillEffect_xinghe_Priest(playerObj, skillId, dataStream)
                     break;
                 case 2: 
                     // 移除神職者變身附加組件
-                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/metamorphosis/ap_metamorphosis.nut"))
-                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/new_priest/metamorphosis/ap_metamorphosis.nut");
+                    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/metamorphosis/ap_metamorphosis.nut"))
+                        CNSquirrelAppendage.sq_RemoveAppendage(playerObj, "character/xinghe/priest/metamorphosis/ap_metamorphosis.nut");
                     break;
             }
             break;
@@ -158,7 +158,7 @@ function getAttackCancelStartFrameSize_Priest(playerObj)
 {
     local defaultFrameSize = playerObj.sq_GetAttackCancelStartFrameSize();
     // 如果有木星守護者附加組件，則設置固定值
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
         defaultFrameSize = 2;
     return defaultFrameSize;
 } 
@@ -177,7 +177,7 @@ function getAttackCancelStartFrame_Priest(playerObj, attackType)
         
     local frameStart = 0;
     // 如果有木星守護者附加組件，根據攻擊類型返回特定幀數
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         switch(attackType)
         {
@@ -210,7 +210,7 @@ function getAttackAni_Priest(playerObj, attackIndex)
         
     local attackAnimation = playerObj.sq_GetAttackAni(attackIndex);
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
         attackAnimation = playerObj.sq_GetCustomAni(189 + attackIndex);
         
     return attackAnimation;
@@ -230,7 +230,7 @@ function getDefaultAttackInfo_Priest(playerObj, attackIndex)
         
     local attackInfo = playerObj.sq_GetDefaultAttackInfo(attackIndex);
     // 如果有木星守護者附加組件，使用自定義攻擊信息
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
         attackInfo = sq_GetCustomAttackInfo(playerObj, 115 + attackIndex);
         
     return attackInfo;
@@ -249,7 +249,7 @@ function getJumpAttackAni_Priest(playerObj)
         
     local jumpAttackAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         jumpAttackAnimation = sq_GetCustomAni(playerObj, 192);
     }
@@ -275,7 +275,7 @@ function getJumpAttackInfo_Priest(playerObj)
         
     local jumpAttackInfo = playerObj.sq_GetJumpAttackInfo();
     // 如果有木星守護者附加組件，使用自定義攻擊信息
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
         jumpAttackInfo = sq_GetCustomAttackInfo(playerObj, 118);
         
     return jumpAttackInfo;
@@ -294,7 +294,7 @@ function getDashAttackInfo_Priest(playerObj)
         
     local dashAttackInfo = playerObj.sq_GetDashAttackInfo();
     // 如果有木星守護者附加組件，使用自定義攻擊信息
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
         dashAttackInfo = sq_GetCustomAttackInfo(playerObj, 119);
         
     return dashAttackInfo;
@@ -313,7 +313,7 @@ function getDashAttackAni_Priest(playerObj)
         
     local dashAttackAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         dashAttackAnimation = sq_GetCustomAni(playerObj, 193);
     }
@@ -339,7 +339,7 @@ function getStayAni_Priest(playerObj)
         
     local stayAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         stayAnimation = sq_GetCustomAni(playerObj, 169);
     }
@@ -365,7 +365,7 @@ function getMoveAni_Priest(playerObj)
         
     local moveAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         moveAnimation = sq_GetCustomAni(playerObj, 170);
     }
@@ -391,7 +391,7 @@ function getSitAni_Priest(playerObj)
         
     local sitAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         sitAnimation = sq_GetCustomAni(playerObj, 171);
     }
@@ -418,7 +418,7 @@ function getDamageAni_Priest(playerObj, damageType)
         
     local damageAnimation = null;
     // 如果有木星守護者附加組件，根據傷害類型使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         switch(damageType)
         {
@@ -452,7 +452,7 @@ function getDownAni_Priest(playerObj)
         
     local downAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         downAnimation = sq_GetCustomAni(playerObj, 174);
     }
@@ -484,8 +484,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -515,8 +515,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -546,8 +546,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -577,8 +577,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -608,8 +608,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -639,8 +639,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -670,8 +670,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -701,8 +701,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -730,8 +730,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     }
     else if (state == 38 && subState == 3)
     {
-        local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-        local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+        local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+        local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
         
         // 平靜脈輪效果處理
         if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -760,8 +760,8 @@ function priest_SetState_2ndPass3Priest(obj, state, datas)
     {
         if (obj.isMyControlObject())
         {
-            local chakraofcalmness = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofcalmness.nut";
-            local chakraofpassion = "character/xinghe/priest/qumo/appendage/ap_buff_chakraofpassion.nut";
+            local chakraofcalmness = "character/xinghe/priest/appendage/ap_buff_chakraofcalmness.nut";
+            local chakraofpassion = "character/xinghe/priest/appendage/ap_buff_chakraofpassion.nut";
             
             // 平靜脈輪效果處理
             if (CNSquirrelAppendage.sq_IsAppendAppendage(obj, chakraofcalmness))
@@ -802,7 +802,7 @@ function getOverturnAni_Priest(playerObj)
         
     local overturnAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         overturnAnimation = sq_GetCustomAni(playerObj, 175);
     }
@@ -828,7 +828,7 @@ function getJumpAni_Priest(playerObj)
         
     local jumpAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         jumpAnimation = sq_GetCustomAni(playerObj, 176);
     }
@@ -854,7 +854,7 @@ function getRestAni_Priest(playerObj)
         
     local restAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         restAnimation = sq_GetCustomAni(playerObj, 177);
     }
@@ -881,7 +881,7 @@ function getThrowChargeAni_Priest(playerObj, chargeType)
         
     local throwChargeAnimation = null;
     // 如果有木星守護者附加組件，根據蓄力類型使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         switch(chargeType)
         {
@@ -922,7 +922,7 @@ function getThrowShootAni_Priest(playerObj, shootType)
         
     local throwShootAnimation = null;
     // 如果有木星守護者附加組件，根據射擊類型使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         switch(shootType)
         {
@@ -962,7 +962,7 @@ function getDashAni_Priest(playerObj)
         
     local dashAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         dashAnimation = sq_GetCustomAni(playerObj, 186);
     }
@@ -988,7 +988,7 @@ function getGetItemAni_Priest(playerObj)
         
     local getItemAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         getItemAnimation = sq_GetCustomAni(playerObj, 187);
     }
@@ -1014,7 +1014,7 @@ function getBuffAni_Priest(playerObj)
         
     local buffAnimation = null;
     // 如果有木星守護者附加組件，使用自定義動畫
-    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/new_priest/jupiter/ap_jupiter.nut") == true)
+    if (CNSquirrelAppendage.sq_IsAppendAppendage(playerObj, "character/xinghe/priest/jupiter/ap_jupiter.nut") == true)
     {
         buffAnimation = sq_GetCustomAni(playerObj, 188);
     }

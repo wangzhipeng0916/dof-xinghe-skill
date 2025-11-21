@@ -122,9 +122,9 @@ function handleSkill246Attack(passiveObject, targetObject, attackInfo, isSkillAt
         if(!isSkillAttack 
             && targetObject.isObjectType(OBJECTTYPE_ACTIVE)) 
         {
-            if(CNSquirrelAppendage.sq_IsAppendAppendage(passiveObject, "character/xinghe/priest/shengqi/haptism/ap_haptism.nut"))
-                CNSquirrelAppendage.sq_RemoveAppendage(passiveObject, "character/xinghe/priest/shengqi/haptism/ap_haptism.nut");
-            local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 246, true, "character/new_priest/haptism/ap_haptism.nut", true);
+            if(CNSquirrelAppendage.sq_IsAppendAppendage(passiveObject, "character/xinghe/priest/haptism/ap_haptism.nut"))
+                CNSquirrelAppendage.sq_RemoveAppendage(passiveObject, "character/xinghe/priest/haptism/ap_haptism.nut");
+            local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 246, true, "character/xinghe/priest/haptism/ap_haptism.nut", true);
             local validTime = 250; 
             appendage.sq_SetValidTime(validTime); 
             sq_MoveToAppendage(targetObject, passiveObject, passiveObject, 0, 0, targetObject.getZPos(), validTime, true, appendage); 
@@ -144,16 +144,16 @@ function handleSkill136Attack(passiveObject, targetObject, attackInfo, isSkillAt
             {
                 local parentObject = passiveObject.getParent(); 
                 if(!parentObject)return;
-                local appendage = CNSquirrelAppendage.sq_GetAppendage(targetObject, "character/new_priest/darkhowling/ap_darkhowling.nut"); 
+                local appendage = CNSquirrelAppendage.sq_GetAppendage(targetObject, "character/xinghe/priest/darkhowling/ap_darkhowling.nut"); 
                 if(appendage) 
                 {
                     local sourceObject = appendage.getSource(); 
                     if(!sourceObject)return; 
                     if(isSameObject(parentObject, sourceObject))return; 
-                    CNSquirrelAppendage.sq_RemoveAppendage(targetObject, "character/new_priest/darkhowling/ap_darkhowling.nut"); 
+                    CNSquirrelAppendage.sq_RemoveAppendage(targetObject, "character/xinghe/priest/darkhowling/ap_darkhowling.nut"); 
                 }
                 
-                appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, parentObject, 136, true, "character/new_priest/darkhowling/ap_darkhowling.nut", true);
+                appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, parentObject, 136, true, "character/xinghe/priest/darkhowling/ap_darkhowling.nut", true);
                 if(appendage)
                 {
                     appendage.getVar("endTime").clear_vector(); 
@@ -186,9 +186,9 @@ function handleSkill137Attack(passiveObject, targetObject, attackInfo, isSkillAt
         {
             passiveObject.getVar().push_obj_vector(targetObject); 
             
-            if(CNSquirrelAppendage.sq_IsAppendAppendage(targetObject, "character/new_priest/doomcrush/ap_doomcrush_atk.nut"))
-                CNSquirrelAppendage.sq_RemoveAppendage(targetObject, "character/new_priest/doomcrush/ap_doomcrush_atk.nut");
-            local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 137, false, "character/new_priest/doomcrush/ap_doomcrush_atk.nut", true);
+            if(CNSquirrelAppendage.sq_IsAppendAppendage(targetObject, "character/xinghe/priest/doomcrush/ap_doomcrush_atk.nut"))
+                CNSquirrelAppendage.sq_RemoveAppendage(targetObject, "character/xinghe/priest/doomcrush/ap_doomcrush_atk.nut");
+            local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 137, false, "character/xinghe/priest/doomcrush/ap_doomcrush_atk.nut", true);
             if(passiveObject.getVar().getBool(0) == false)
             {
                 passiveObject.getVar().setBool(0, true); 
@@ -206,10 +206,10 @@ function handleSkill132Attack(passiveObject, targetObject, attackInfo, isSkillAt
         case 2:
             if(!isSkillAttack 
                 && targetObject.isObjectType(OBJECTTYPE_ACTIVE) 
-                && !CNSquirrelAppendage.sq_IsAppendAppendage(targetObject, "character/new_priest/inviteofdevil/ap_inviteofdevil.nut")) 
+                && !CNSquirrelAppendage.sq_IsAppendAppendage(targetObject, "character/xinghe/priest/inviteofdevil/ap_inviteofdevil.nut")) 
             {
                 local moveTime = 200; 
-                local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 132, false, "character/new_priest/inviteofdevil/ap_inviteofdevil.nut", true);
+                local appendage = CNSquirrelAppendage.sq_AppendAppendage(targetObject, passiveObject, 132, false, "character/xinghe/priest/inviteofdevil/ap_inviteofdevil.nut", true);
                 if(subType == 1)
                     sq_MoveToAppendage(targetObject, passiveObject, passiveObject, 135, -5, 0, moveTime, true, appendage); 
                 else if(subType == 2)

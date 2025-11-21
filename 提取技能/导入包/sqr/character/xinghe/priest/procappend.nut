@@ -150,7 +150,7 @@ function handleSkill238Process(passiveObject)
                         local activeObject = sq_GetCNRDObjectToActiveObject(variableData.get_obj_vector(i));
                         if (!activeObject.isDead())
                         {
-                            local appendage = CNSquirrelAppendage.sq_GetAppendage(activeObject, "character/xinghe/priest/qumo/pentagon/ap_pentagon.nut");
+                            local appendage = CNSquirrelAppendage.sq_GetAppendage(activeObject, "character/xinghe/priest/pentagon/ap_pentagon.nut");
                             if (appendage)
                             {
                                 local moveX = sq_GetUniformVelocity(appendage.getVar().get_vector(0), targetX, elapsedTime, animationTime);
@@ -184,7 +184,7 @@ function handleSkill238Process(passiveObject)
                             local activeObject = sq_GetCNRDObjectToActiveObject(variableData.get_obj_vector(i));
                             if (!activeObject.isDead())
                             {
-                                local appendage = CNSquirrelAppendage.sq_GetAppendage(activeObject, "character/xinghe/priest/qumo/pentagon/ap_pentagon.nut");
+                                local appendage = CNSquirrelAppendage.sq_GetAppendage(activeObject, "character/xinghe/priest/pentagon/ap_pentagon.nut");
                                 if (appendage)
                                 {
                                     appendage.getVar().set_vector(0, activeObject.getXPos());
