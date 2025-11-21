@@ -1,0 +1,91 @@
+#PVF_File
+
+[name]
+`强化 - 裂地捶`
+
+[name2]
+`Fissure Hammer Upgrade`
+
+[explain]
+`将恶魔的气息聚集到拳头后，用力捶击地面击起乱石。 乱石柱连续出现3次，并对周围敌人造成无属性魔法伤害。`
+
+[basic explain]
+`将恶魔的气息聚集到拳头后，用力捶击地面击起乱石。`
+
+[explain ex]
+`增加裂地捶的攻击力。
+技能每增加Lv1时，攻击力增加率 : 10%%`
+
+[basic explain ex]
+`增加裂地捶的攻击力。`
+
+[feature skill type]
+1	
+[special purchase cost]
+2	
+[/special purchase cost]
+
+[type]
+`[passive]`
+
+[skill class]
+3	
+[maximum level]
+10	
+[growtype maximum level]
+0	0	0	0	5	0	
+[skill fitness growtype]
+4	
+[/skill fitness growtype]
+
+[pre required skill]
+118	10	
+[/pre required skill]
+
+[required level]
+55	
+[required level range]
+5	
+[executable states]
+0	14	8	
+[/executable states]
+
+[icon]
+`Character/Priest/Effect/SkillIcon.img`
+340	`Character/Priest/Effect/SkillIcon.img`
+341	
+[static data]
+90	3	
+[/static data]
+
+[level info]
+2	1764	4	1948	4	2128	4	2308	4	2480	4	2672	4	2856	4	3036	4	3220	4	3408	4	3584	4	3772	4	3944	4	4136	4	4316	4	4496	4	4680	4	4864	4	5040	4	5228	4	5404	4	5588	4	5776	4	5952	4	6136	4	6328	4	6500	4	6680	4	6864	4	7044	4	7236	4	7408	4	7596	4	7768	4	7960	4	8144	4	8324	4	8508	4	8696	4	8872	4	9060	4	9232	4	9416	4	9604	4	9776	4	9968	4	10152	4	10328	4	10516	4	10692	4	10876	4	11060	4	11240	4	11420	4	11608	4	11788	4	11968	4	12152	4	12332	4	12512	4	12704	4	12884	4	13064	4	13248	4	13428	4	13608	4	13792	4	13976	4	14156	4	14340	4	
+[/level info]
+
+[special level up]
+-1	0	`%`
+10	
+[/special level up]
+
+[pvp]
+
+[static data]
+90	3	
+[/static data]
+
+[level info]
+2	34	4	37	4	41	4	44	4	48	4	51	4	55	4	58	4	62	4	65	4	69	4	72	4	76	4	79	4	83	4	86	4	90	4	93	4	97	4	100	4	104	4	107	4	111	4	114	4	118	4	121	4	125	4	128	4	131	4	135	4	139	4	142	4	146	4	149	4	152	4	156	4	159	4	163	4	167	4	170	4	173	4	177	4	180	4	184	4	187	4	191	4	194	4	198	4	201	4	205	4	208	4	212	4	215	4	219	4	222	4	226	4	229	4	233	4	236	4	240	4	243	4	247	4	250	4	254	4	257	4	261	4	264	4	268	4	271	4	275	4	
+[/level info]
+
+[/pvp]
+
+[level property]
+1	99	`石柱魔法攻击力 : <int>%%
+[裂地锤]生成数量 : <int>个
+ 
+- [魔化 : 末日审判者]状态下施放[裂地锤]时 -
+石柱变为黑暗石柱
+升起的乱石数量 : <int>个`
+-1	0	1.0	1	1	1.0	-1	1	1.0	
+[/level property]
+

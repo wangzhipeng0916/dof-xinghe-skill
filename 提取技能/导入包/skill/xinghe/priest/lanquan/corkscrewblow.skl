@@ -1,0 +1,84 @@
+#PVF_File
+
+[name]
+`旋涡重拳`
+
+[basic explain]
+`快速旋转手臂吸附并控制周围敌人， 造成多段伤害。 最后发动强力拳击。`
+
+[explain]
+`快速旋转手臂吸附并控制周围敌人， 造成多段伤害。 最后发动强力拳击。`
+
+[purchase cost]
+60	
+[/purchase cost]
+
+[executable states]
+8	0	14	243	244	242	245	252	44	21	22	37	42	43	44	45	54	55	28	33	31	50	253	32	
+[/executable states]
+
+[required level]
+60	
+[required level range]
+2	
+[type]
+`[active]`
+
+[skill class]
+1	
+[maximum level]
+50	
+[growtype maximum level]
+0	0	40	0	0	0	
+[skill fitness growtype]
+2	
+[/skill fitness growtype]
+
+[pre required skill]
+78	5	
+[/pre required skill]
+
+[consume MP]
+400	1120	
+[cool time]
+30000	30000	
+[durability decrease rate]
+20	
+[consume item]
+3037	2	2	
+[/consume item]
+
+[icon]
+`Character/Priest/Effect/SkillIcon.img`
+508	`Character/Priest/Effect/SkillIcon.img`
+509	
+[command]
+{6=`(UP)`}
+{8=`,`}
+{6=`(RIGHT)`}
+{8=`,`}
+{6=`(SKILL)`}
+
+[/command]
+
+[command key explain]
+`操作指令 : ↑→ + Z`
+
+[dungeon]
+
+[static data]
+100	
+[/static data]
+
+[level info]
+2	147	3147	162	3466	177	3785	192	4105	206	4424	221	4743	237	5063	251	5382	266	5701	281	6020	296	6339	311	6658	326	6978	341	7297	356	7616	370	7936	385	8255	400	8574	415	8893	430	9213	445	9532	460	9851	475	10170	490	10489	505	10809	520	11128	534	11447	549	11767	564	12086	579	12405	594	12724	609	13043	624	13363	639	13682	653	14001	668	14320	683	14640	698	14959	713	15278	728	15598	743	15917	758	16236	773	16555	787	16874	802	17193	818	17513	832	17832	847	18151	862	18471	877	18790	892	19109	907	19428	922	19748	937	20067	951	20386	966	20705	981	21024	996	21344	1011	21663	1026	21982	1041	22302	1056	22621	1071	22940	1086	23259	1101	23578	1115	23898	1130	24217	1145	24536	1160	248551678	
+[/level info]
+
+[/dungeon]
+
+[level property]
+1	99	`旋转多段攻击力 : <int>%%
+最后壹击攻击力 : <int>%%`
+-1	0	1.0	-1	1	1.0	
+[/level property]
+

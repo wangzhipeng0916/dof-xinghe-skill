@@ -1,0 +1,73 @@
+#PVF_File
+
+[name]
+`脉轮 : 式神`
+
+[basic explain]
+`使用脉轮系技能时， 可通过[脉轮 : 式神]强化真龙星君的技能。`
+
+[explain]
+`    使用脉轮系技能时， 可通过[脉轮 : 式神]强化真龙星君的技能。
+以下技能附加特效， 并且最后一击会引发爆炸。
+基本攻击、 [空斩打]、 [落凤锤]、 [疾风打]、 [星落打]、 [巨旋风]、 [断空捶击]、 [狂乱锤击]、 [疾空旋风破]、 [无双击]、 [狂暴锤击]。
+ 
+[特殊功能的适用技能]
+[苍龙击] : 加快技能释放动作。
+[压制符] : 跟随人物移动。
+[落雷符] : 跟随人物移动。
+ON/OFF开关切换符咒跟随。`
+
+[purchase cost]
+0	
+[/purchase cost]
+
+[required level]
+75	
+[required level range]
+50	
+[type]
+`[passive]`
+
+[skill class]
+2	
+[seal enable]
+1	
+[maximum level]
+1	
+[growtype maximum level]
+0	0	0	0	0	0	
+[second growtype maximum level]
+0	0	0	0	0	0	1	1	0	0	0	0	
+[skill fitness growtype]
+3	
+[/skill fitness growtype]
+
+[skill fitness second growtype]
+2	
+[/skill fitness second growtype]
+
+[icon]
+`Character/Priest/Effect/SkillIcon.img`
+453	`Character/Priest/Effect/SkillIcon.img`
+454	
+[skill preloading image]
+
+[/skill preloading image]
+
+[static data]
+0	0	200	0	400	200	0	10	10	100	0	
+[/static data]
+
+[level info]
+7	50	250	36	36	36	36	36	50	250	38	38	38	38	38	50	250	40	40	40	40	40	50	250	42	42	42	42	42	50	250	44	44	44	44	44	50	250	46	46	46	46	46	50	250	48	48	48	48	48	50	250	50	50	50	50	50	50	250	52	52	52	52	52	50	250	54	54	54	54	54	50	250	56	56	56	56	56	
+[/level info]
+
+[pvp]
+
+[/pvp]
+
+[level property]
+1	99	`技能攻击力增加 : <int>%%`
+-1	1	0.1	
+[/level property]
+

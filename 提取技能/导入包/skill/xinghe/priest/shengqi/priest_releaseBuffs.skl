@@ -1,0 +1,98 @@
+#PVF_File
+
+[name]
+`神圣之光`
+
+[explain]
+`将神圣之力修练至极致，增加技能伤害。
+按下技能键后可以瞬间释放：
+武器祝福、天使祝福、光之复仇、天籁之音、守护徽章、荣誉祝福、生命泉源。
+ON/OFF开关切换天启之珠跟随。`
+
+[basic explain]
+`将神圣之力修练至极致，增加技能伤害。
+按下技能键后可以瞬间释放：
+武器祝福、天使祝福、光之复仇、天籁之音、守护徽章、荣誉祝福、生命泉源。
+ON/OFF开关切换天启之珠跟随。`
+
+[purchase cost]
+0	
+[/purchase cost]
+
+[required level]
+75	
+[required level range]
+3	
+[type]
+`[active]`
+
+[skill class]
+1	
+[seal enable]
+1	
+[maximum level]
+1	
+[growtype maximum level]
+1	1	1	1	1	1	
+[skill fitness growtype]
+0	1	2	3	4	
+[/skill fitness growtype]
+
+[consume MP]
+6	40	
+[cool time]
+30000	30000	
+[executable states]
+0	14	8	
+[/executable states]
+
+[durability decrease rate]
+30	
+[weapon effect type]
+`[magical]`
+
+[icon]
+`Character/Priest/Effect/SkillIcon.img`
+415	`Character/Priest/Effect/SkillIcon.img`
+416	
+[command]
+{6=`(UP)`}
+{8=`,`}
+{6=`(UP)`}
+{8=`,`}
+{6=`(SKILL)`}
+
+[/command]
+
+[command key explain]
+`操作指令 : ↑↑ + Z`
+
+[static data]
+80	150	
+[/static data]
+
+[level info]
+3	25	50	25	
+[/level info]
+
+[pvp]
+
+[level info]
+3	25	25	25	
+[/level info]
+
+[/pvp]
+
+[death tower]
+
+[/death tower]
+
+[warroom]
+
+[/warroom]
+
+[level property]
+1	99	`技能攻击力增加 : <int>%%`
+-1	1	1.0	
+[/level property]
+
